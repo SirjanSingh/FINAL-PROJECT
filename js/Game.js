@@ -21,42 +21,50 @@ class Game {
             case 1:
                 player.addImage("simple",plane1);
                 break;
-                case 2:
-                    player.addImage("simple",plane1);
-                    break; 
-                    case 3:
-                         player.addImage("simple",plane3);
-                         break; 
-                         case 4:
-                            player.addImage("simple",plane4);
-                            break; 
-                            case 5:
-                                 player.addImage("simple",plane5);
-                                 break; 
-                                 case 6:
-                                    player.addImage("simple",plane6);
-                                    break; 
-                                    case 7:
-                                        player.addImage("simple",plane7);
-                                         break; 
-                                         case 8:
-                                             player.addImage("simple",plane8);
-                                             break; 
-                                             case 9:
-                                                 player.addImage("simple",plane9);
-                                                 break; 
-                                                 default:
-                                                    player.addImage("simple",plane1);
-                                                    break;
+            case 2:
+                player.addImage("simple",plane1);
+                break; 
+            case 3:
+                player.addImage("simple",plane3);
+                break; 
+            case 4:
+                player.addImage("simple",plane4);
+                break; 
+            case 5:
+                player.addImage("simple",plane5);
+                break; 
+            case 6:
+                player.addImage("simple",plane6);
+                break; 
+            case 7:
+                player.addImage("simple",plane7);
+                break; 
+            case 8:
+                player.addImage("simple",plane8);
+                break; 
+            case 9:
+                player.addImage("simple",plane9);
+                break; 
+            default:
+                player.addImage("simple",plane1);
+                break;
         }
     }
 
     play(){
-        if(frameCount % 50 === 0){
-            enemies.createEnemies();
-        }
-       
         gameObj.start();
+
+        if(frameCount % 50 === 0){
+            enemiesObj.createEnemies();
+        }
+
+        //rate of bullet firing
+        if(frameCount % 5 === 0){
+        laserObj.createLasers();
+        }
+       laserObj.collision();
+       
+        //console.log(lasersGroup.length)
     }
     display(){
         

@@ -4,10 +4,10 @@ class Enemies {
     }
 
     createEnemies(){
-            var enemies = createSprite(random(50,450),0);
+            var enemies = createSprite(random(50,450),0,50,50);
             var rand = Math.round(random(1,5));
             console.log(rand)
-            switch(rand){
+            /*switch(rand){
                 case 1:
                     enemies.addImage(enemyRedImg);
                     break;
@@ -21,11 +21,11 @@ class Enemies {
                     enemies.addImage(enemyYellowImg);
                     break; 
                 case 5:
-                    enemies.addImage(enemyWhiteImg);
+                    enemies.addImage(enemyWhite2Img);
                     break;
                 default :
                     enemies.addImage(enemyRedImg)    
-            }
+            }*/
             enemies.velocityY = 5;
             enemiesGroup.add(enemies);
     }
