@@ -42,7 +42,7 @@ enemyWhite2Img = loadImage("images/enemyPlane/Enemy_Plane_White2.png");
 
 main_ScreenImg = loadImage("images/Untitled.png");
 
-plane_SelectionMenuImg = loadImage("images/planeselection.jpg");
+plane_SelectionMenuImg = loadImage("images/planeSelection.jpg");
 
 rescueManImg  = loadAnimation("images/RescueMan.gif");
 backButtonImg = loadImage("images/backButton.png"); 

@@ -3,11 +3,11 @@ class Enemies {
 
     }
 
-    createEnemies(){
-            var enemies = createSprite(random(50,450),0,50,50);
+    createEnemies(x,y,xv,yv){
+            var enemies = createSprite(x,y,50,50);
             var rand = Math.round(random(1,5));
             console.log(rand)
-            /*switch(rand){
+            switch(rand){
                 case 1:
                     enemies.addImage(enemyRedImg);
                     break;
@@ -25,8 +25,10 @@ class Enemies {
                     break;
                 default :
                     enemies.addImage(enemyRedImg)    
-            }*/
-            enemies.velocityY = 5;
+            }
+            enemies.velocityX = xv;
+            enemies.velocityY = yv;
+            enemies.lifetime = displayHeight/4 //4 bcoz I not  want it to vanish earlier
             enemiesGroup.add(enemies);
     }
 

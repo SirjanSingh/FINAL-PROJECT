@@ -6,25 +6,27 @@ class Laser {
     createLasers(){
         fill("red")
         lasers = createSprite(mouseX,mouseY-10,5,15);
-        lasers.velocityY = -13;
-        lasers.lifetime = lasers.x/13;
+        lasers.velocityY = -15;
+        lasers.lifetime = lasers.y/15;
         lasersGroup.add(lasers) ;
+        frameRate(144)
 
     }
 
     collision(){
+        /*
         for(var i = 0; i < enemiesGroup.length; i++){
            /* var ex = enemiesGroup.get(i).x;
-            var ey = enemiesGroup.get(i).y;*/
+            var ey = enemiesGroup.get(i).y;
             //console.log("change")
 
             //for(var j = 0;j<lasersGroup.length; j++){
                 if(lasersGroup.isTouching(enemiesGroup.get(i))){
                     enemiesGroup.get(i).destroy();
-                    //i--;
+                    i--;
                    // lasersGroup.get(j).destroy();
                     //j--;
-                    console.log("waergvdearvdzeasd\naawefsd\naewdvarwefasd\tsdvc")
+                    console.log("FPS : "+frameRate())
                 }
                 //console.log(i,j)
 
@@ -38,11 +40,34 @@ class Laser {
                     
                        console.log(i)
 
-                }*/
+                }
           //  }
-        }
+        }*/
        // console.log(ex,ey)
-
+       var lcv = 0;
+       for(var i = lcv; i < enemiesGroup.length; i++){
+            if(lasersGroup.isTouching(enemiesGroup.get(i))){
+            enemiesGroup.get(i).x = 800;
+            lasersGroup.destroyEach();
+            frameRate(144)
+            lcv  += 1;
+            //i--;
+           console.log(enemiesGroup.get(i).x,"Ship no " + lcv)
+            }
+        }
+     //  if(enemiesGroup.length>lcv){
+      /*  for(var j = 0;j<lasersGroup.length; j++){
+            if( enemiesGroup.isTouching(lasersGroup.get(j))){
+            frameRate(144)
+            console.log("yeah")
+          // enemiesGroup.destroy();
+            lasersGroup.get(j).destroy();
+            lcv++;
+          }
+         }*/
+       // }
+        
+        console.log(lcv)
     }
     display(){
 

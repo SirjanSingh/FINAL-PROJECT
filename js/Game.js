@@ -52,9 +52,14 @@ class Game {
     }
 
     play(){
-        gameObj.start();
+        textSize(20)
+        text("FPS:"+Math.round(frameRate()),400,25)
 
-        if(frameCount % 50 === 0){
+        gameObj.start();
+        frameRate(144)
+        
+        //console.log(frameRate())
+        if(frameCount % 25 === 0){
             enemiesObj.createEnemies();
         }
 
