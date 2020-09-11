@@ -60,7 +60,7 @@ class Game {
         
         //console.log(frameRate())
         if(frameCount % 25 === 0){
-            enemiesObj.createEnemies();
+            enemiesObj.createEnemies(random(50,450),0,10,10);
         }
 
         //rate of bullet firing
