@@ -4,34 +4,83 @@ class Enemies {
     }
 
     createEnemies(x,y,xv,yv){
-            var enemies = createSprite(x,y,50,50);
+            var enemy = createSprite(x,y,50,50);
+            //enemy.debug = true;
             var rand = Math.round(random(1,5));
-            console.log(rand)
+            //console.log(rand)
             switch(rand){
                 case 1:
-                    enemies.addImage(enemyRedImg);
+                    enemy.addImage(enemyRedImg);
+                    enemy.setCollider("circle",0,0,35);
                     break;
                 case 2:
-                    enemies.addImage(enemyGreenImg);
+                    enemy.addImage(enemyGreenImg);
+                    enemy.setCollider("circle",0,0,35);
                     break;    
                 case 3:
-                    enemies.addImage(enemyCyanImg);
+                    enemy.addImage(enemyCyanImg);
+                    enemy.setCollider("circle",5,0,29);
+                    enemy.scale = 1.45
                     break;
                 case 4:
-                    enemies.addImage(enemyYellowImg);
+                    enemy.addImage(enemyYellowImg);
+                    enemy.setCollider("circle",0,0,37);
                     break; 
                 case 5:
-                    enemies.addImage(enemyWhite2Img);
+                    enemy.addImage(enemyWhite2Img);
+                    enemy.setCollider("circle",0,0,38);
                     break;
                 default :
-                    enemies.addImage(enemyRedImg)    
+                    enemy.addImage(enemyRedImg)   
+                    enemy.setCollider("circle",0,0,35); 
             }
-            enemies.velocityX = xv;
-            enemies.velocityY = yv;
-            enemies.lifetime = displayHeight/4 //4 bcoz I not  want it to vanish earlier
-            enemiesGroup.add(enemies);
+          
+            enemy.lifetime = displayHeight/(yv-1); //more lifetime bcoz I not  want it to vanish earlier
+            enemiesGroup.add(enemy);
+    }
+    enemiesRed1(x,y,xv,yv){
+            e1r++;
+            e1rex = 1;
+            var enemy = createSprite(x,y,50,50);
+            // enemy.addImage(enemyRedImg);
+            enemy.velocityX = xv;
+            enemy.velocityY = yv;
+            enemy.lifetime  = 500;
+            enemiesGroup.add(enemy);
+            enemiesRedGroup1.add(enemy);
+            enemies.push(enemy)
     }
 
+    enemiesRed2(x,y,xv,yv){
+        e2r++;
+        e2rex =1;
+        var enemy = createSprite(x,y,50,50);
+        // enemy.addImage(enemyRedImg);
+        enemy.velocityX = xv;
+        enemy.velocityY = yv;
+        enemy.lifetime  = 500;
+        enemiesGroup.add(enemy); 
+        enemiesRedGroup2.add(enemy);
+        enemies.push(enemy)
+    }
+
+    rotateE1r(x,y){
+        for( var i = 0 ; i < enemiesRedGroup1.length;i++){
+                if(enemiesRedGroup1.get(i).x>150){
+                    enemiesRedGroup1.get(i).velocityX = x;
+                    enemiesRedGroup1.get(i).velocityY = y;
+                }
+        }
+    }
+    rotateE2r(x,y){
+        for( var i = 0 ; i < enemiesRedGroup2.length;i++){
+            if(enemiesRedGroup2.get(i).x<350){
+                enemiesRedGroup2.get(i).velocityX = x;
+                enemiesRedGroup2.get(i).velocityY = y;
+            }
+        
+        }
+    }
     display(){
 
     }

@@ -4,14 +4,18 @@ class Laser {
     }
 
     createLasers(){
-        fill("red")
-        lasers = createSprite(mouseX,mouseY-10,5,15);
-        lasers.velocityY = -15;
-        lasers.lifetime = lasers.y/15;
-        lasersGroup.add(lasers) ;
-        frameRate(144)
+      fill("red")
+      laser = createSprite(mouseX,mouseY-10,5,15);
+      laser.velocityY = -15;
+      //laser.debug = true;
+      laser.setCollider("circle",0,0,8)
+      laser.lifetime = laser.y/15;
+      laser.addImage("bullet", bulletImg)
+      lasersGroup.add(laser) ;
+      lasers.push(laser)
+      //frameRate(144)
 
-    }
+  }
 
     collision(){
         /*
@@ -44,16 +48,41 @@ class Laser {
           //  }
         }*/
        // console.log(ex,ey)
-       var lcv = 0;
-       for(var i = lcv; i < enemiesGroup.length; i++){
-            if(lasersGroup.isTouching(enemiesGroup.get(i))){
-            enemiesGroup.get(i).x = 800;
-            lasersGroup.destroyEach();
-            frameRate(144)
-            lcv  += 1;
+       /* for(var i = 0; i < enemies.length; i++){
+            for(var j = 0;j<lasers.length; j++){
+              
+              if((lasersGroup[j]).isTouching(enemies[i])){
+              enemiesGroup[i].x =800;
+              lcv  = lcv + 1;
+                  //i--;
+                 // console.log("Ship no " + lcv);
+                  lasersGroup[j].destroy();
+                  //j--;
+                  //console.log("FPS : "+frameRate())
+              } */
+     
+            //if(lasersGroup.isTouching(enemiesGroup.get(i))){
+            //enemiesGroup.get(i).x = 800;
+
+          for(var i = 0; i < enemiesGroup.length; i++){
+            for(var j = 0;j<lasersGroup.length; j++){
+              
+              if((lasersGroup.get(j)).isTouching(enemiesGroup.get(i))){
+              enemiesGroup.get(i).x =800;
+              lcv  = lcv + 1;
+                  //i--;
+                 // console.log("Ship no " + lcv);
+                  lasersGroup.get(j).destroy();
+                  //j--;
+                  //console.log("FPS : "+frameRate())
+              }
+                         //frameRate(144)
+           
+            
             //i--;
-           console.log(enemiesGroup.get(i).x,"Ship no " + lcv)
+           
             }
+            
         }
      //  if(enemiesGroup.length>lcv){
       /*  for(var j = 0;j<lasersGroup.length; j++){
@@ -67,7 +96,7 @@ class Laser {
          }*/
        // }
         
-        console.log(lcv)
+        //console.log(lcv)
     }
     display(){
 
