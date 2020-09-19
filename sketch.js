@@ -35,8 +35,15 @@ var e1rex;
 var e2rex;
 var lasers = [];
 var enemies = [];
+var newAnime,
+    enemy;
+var back1 ,back2,back3 ,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,back12,back13 ,back14,back15 ,back16,back17 ,back18,back19 ,back20,back21 ,back22,back23 ,back24,back25 ,back26,back27 ,back28,back29 ,back30,back31 ,back32,back33 ,back33,back34 ,back35,back36;
+
+var back,backSprite;
+var sirjan,r = 0;
 
 function preload(){
+
 plane1 = loadImage("images/plane/Plane_1.PNG.png");
 plane2 = loadImage("images/plane/Plane_2.PNG.png");
 plane3 = loadImage("images/plane/Plane_9.PNG.png");
@@ -53,7 +60,7 @@ enemyCyanImg   = loadImage("images/enemyPlane/Enemy_Plane_Cyan.png");
 enemyWhiteImg  = loadImage("images/enemyPlane/Enemy_Plane_White.png");
 enemyYellowImg = loadImage("images/enemyPlane/Enemy_Plane_Yellow.png");
 
-enemyRed2Img   = loadImage("images/enemyPlane/Enemy_Plane_Red2.png");
+enemyRed2Img   = loadImage("images/enemyPlane/Enemy_Plane_Red-2.png");
 enemyWhite2Img = loadImage("images/enemyPlane/Enemy_Plane_White2.png"); 
 
 main_ScreenImg = loadImage("images/Untitled.png");
@@ -71,10 +78,58 @@ bulletImg    = loadImage("images/bulletCircular.png");
 //explosion_12 = "images/explosion1/2.png";
 explosion_1 = loadAnimation("images/explosionA/1.png","images/explosionA/2.png","images/explosionA/3.png","images/explosionA/4.png","images/explosionA/5.png","images/explosionA/6.png","images/explosionA/7.png","images/explosionA/8.png","images/explosionA/9.png","images/explosionA/10.png","images/explosionA/11.png","images/explosionA/12.png","images/explosionA/13.png","images/explosionA/14.png","images/explosionA/15.png","images/explosionA/16.png","images/explosionA/17.png")
 explosion_2 = loadAnimation("images/explosionB/1.png","images/explosionB/2.png","images/explosionB/3.png","images/explosionB/4.png","images/explosionB/5.png","images/explosionB/6.png","images/explosionB/7.png","images/explosionB/8.png","images/explosionB/9.png","images/explosionB/10.png","images/explosionB/11.png","images/explosionB/12.png","images/explosionB/13.png");
+
+newAnime = loadAnimation("Basic/Hero-FighterJet/Without-Bullet/hero1.png","Basic/Hero-FighterJet/Without-Bullet/hero2.png","Basic/Hero-FighterJet/Without-Bullet/hero3.png","Basic/Hero-FighterJet/Without-Bullet/hero4.png","Basic/Hero-FighterJet/Without-Bullet/hero5.png","Basic/Hero-FighterJet/Without-Bullet/hero6.png");
+//newAnime = loadAnimation("images/explosionA/1.png","images/explosionA/2.png","images/explosionA/3.png","images/explosionA/4.png","images/explosionA/5.png","images/explosionA/6.png","images/explosionA/7.png","images/explosionA/8.png","images/explosionA/9.png","images/explosionA/10.png","images/explosionA/11.png","images/explosionA/12.png","images/explosionA/13.png","images/explosionA/14.png","images/explosionA/15.png","images/explosionA/16.png","images/explosionA/17.png")
+
+back1 = loadImage("b/frame_00_delay-0.03s.gif");
+back2 = loadImage("b/frame_01_delay-0.03s.gif");
+back3 = loadImage("b/frame_02_delay-0.03s.gif");
+back4 = loadImage("b/frame_03_delay-0.03s.gif");
+back5 = loadImage("b/frame_04_delay-0.03s.gif");
+back6 = loadImage("b/frame_05_delay-0.03s.gif");
+back7 = loadImage("b/frame_06_delay-0.03s.gif");
+back8 = loadImage("b/frame_07_delay-0.03s.gif");
+back9 = loadImage("b/frame_08_delay-0.03s.gif");
+back10 = loadImage("b/frame_09_delay-0.03s.gif");
+back11 = loadImage("b/frame_10_delay-0.03s.gif");
+back12 = loadImage("b/frame_11_delay-0.03s.gif");
+back13 = loadImage("b/frame_12_delay-0.03s.gif");
+back14 = loadImage("b/frame_13_delay-0.03s.gif");
+back15 = loadImage("b/frame_14_delay-0.03s.gif");
+back16 = loadImage("b/frame_15_delay-0.03s.gif");
+back17 = loadImage("b/frame_16_delay-0.03s.gif");
+back18 = loadImage("b/frame_17_delay-0.03s.gif");
+back19 = loadImage("b/frame_18_delay-0.03s.gif");
+back20 = loadImage("b/frame_19_delay-0.03s.gif");
+back21 = loadImage("b/frame_20_delay-0.03s.gif");
+back22 = loadImage("b/frame_21_delay-0.03s.gif");
+back23 = loadImage("b/frame_22_delay-0.03s.gif");
+back24 = loadImage("b/frame_23_delay-0.03s.gif");
+back25 = loadImage("b/frame_24_delay-0.03s.gif");
+back26 = loadImage("b/frame_25_delay-0.03s.gif");
+back27 = loadImage("b/frame_26_delay-0.03s.gif");
+back28 = loadImage("b/frame_27_delay-0.03s.gif");
+back29 = loadImage("b/frame_28_delay-0.03s.gif");
+back30 = loadImage("b/frame_29_delay-0.03s.gif");
+back31 = loadImage("b/frame_30_delay-0.03s.gif");
+back32 = loadImage("b/frame_31_delay-0.03s.gif");
+back33 = loadImage("b/frame_32_delay-0.03s.gif");
+back34 = loadImage("b/frame_33_delay-0.03s.gif");
+back35 = loadImage("b/frame_34_delay-0.03s.gif");
+back36 = loadImage("b/frame_35_delay-0.03s.gif");
+
+
+back  = loadAnimation(back1,back2,back3,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,back12,back13 ,back14,back15 ,back16,back17 ,back18,back19 ,back20,back21 ,back22,back23 ,back24,back25 ,back26,back27 ,back28,back29 ,back30,back31 ,back32,back33 ,back33,back34 ,back35,back36);
 }
 
 function setup(){
     createCanvas(500,displayHeight);
+
+    angleMode(DEGREES)
+    //backSprite = createSprite(250,displayHeight/2,10,10);
+    //backSprite.scale = 1;
+    //backSprite.addAnimation("backGround",back)
 
 selectPlaneMenu = createSprite(250,displayHeight/2)
 selectPlaneMenu.visible = false;
@@ -107,9 +162,15 @@ startGame.visible = false;
 player = createSprite(250,570,50,50);
 player.visible = false;
 
+player1 = createSprite(250,570,50,50);
+player1.visible = false;
+player1.addAnimation("animation",newAnime);
 //explosionSprite = createSprite(200,200,40,40);
-//explosionSprite.addAnimation("explosion",explosion_2)
+//explosionSprite.addAnimation("explosion",newAnime)
 //calling the start function
+
+//sirjan = createSprite(250,250,100,100);
+
 
 frameRate(144)
 }
@@ -118,20 +179,28 @@ function draw(){
 background("black");
 frameRate(48)
 frameC += 1;
-
+/*
+r++;
+push();
+translate(sirjan.x,sirjan.y);
+sirjan.rotation = r
+pop();*/
+console.log(sirjan)
 gameObj.start();
 //console.log(gameState);
 //console.log(frameCount-fc3);
 
 if(frameCount > (fc3+175)){
-    console.log("ouch")
+    //console.log("ouch")
     //e2r = 0;
 }
 //console.log(enemiesGroup.length)
 player.x = mouseX;
 player.y = mouseY;
-console.log(mouseX +":"+mouseY );
-//console.log(planeNumber)
+player1.x = mouseX;
+player1.y = mouseY;
+//console.log(mouseX +":"+mouseY );
+//console.log(enemies)
 
 
 

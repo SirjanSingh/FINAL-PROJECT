@@ -37,7 +37,7 @@ class Game {
         }
         else if(gameState === "selectPlane"){
        
-        if((frameC > (fc1 +100)) || fc1 === undefined){
+        if((frameC > (fc1 +100)) ){
             if(mousePressedOver(backButton) || planeNumber  === undefined){
               backObj.backFromPlaneSelection();
                 fc2 = frameC;
@@ -63,34 +63,36 @@ class Game {
         
         switch(planeNumber){
             case 1:
-                player.addImage("simple",plane1);
+                player.addAnimation("simple",plane1);
                 break;
             case 2:
-                player.addImage("simple",plane1);
+                player.addAnimation("simple",plane1);
                 break; 
             case 3:
-                player.addImage("simple",plane3);
+                player.addAnimation("simple",plane3);
                 break; 
             case 4:
-                player.addImage("simple",plane4);
+                player.addAnimation("simple",plane4);
                 break; 
             case 5:
-                player.addImage("simple",plane5);
+                player.addAnimation("simple",plane5);
                 break; 
             case 6:
-                player.addImage("simple",plane6);
+                player.addAnimation("simple",plane6);
                 break; 
             case 7:
-                player.addImage("simple",plane7);
+                player.addAnimation("simple",plane7);
                 break; 
             case 8:
-                player.addImage("simple",plane8);
+                player.addAnimation("simple",plane8);
                 break; 
             case 9:
-                player.addImage("simple",plane9);
+                player.addAnimation("simple",plane9);
                 break; 
             default:
-                player.addImage("simple",plane1);
+                //console.log("shit");
+                player1.visible = true;
+                player1.scale = 0.35
                 break;
         }
         textSize(20)

@@ -6,10 +6,10 @@ class Laser {
     createLasers(){
       fill("red")
       laser = createSprite(mouseX,mouseY-10,5,15);
-      laser.velocityY = -15;
+      laser.velocityY = -18;
       //laser.debug = true;
       laser.setCollider("circle",0,0,8)
-      laser.lifetime = laser.y/15;
+      laser.lifetime = displayHeight/laser.velocityY-2;
       laser.addImage("bullet", bulletImg)
       lasersGroup.add(laser) ;
       lasers.push(laser)
@@ -48,23 +48,26 @@ class Laser {
           //  }
         }*/
        // console.log(ex,ey)
-       /* for(var i = 0; i < enemies.length; i++){
+        for(var i = 0; i < enemies.length; i++){
+         
             for(var j = 0;j<lasers.length; j++){
               
-              if((lasersGroup[j]).isTouching(enemies[i])){
-              enemiesGroup[i].x =800;
-              lcv  = lcv + 1;
+              if((lasers[j]).isTouching(enemies[i])){
+              enemies[i].x =800;
+              //enemies.pop(enemies[i])
+             lcv  = lcv + 1;
                   //i--;
                  // console.log("Ship no " + lcv);
-                  lasersGroup[j].destroy();
+                  lasers[j].destroy();
                   //j--;
                   //console.log("FPS : "+frameRate())
-              } */
-     
+              }
+             // console.log(i) 
+            }
             //if(lasersGroup.isTouching(enemiesGroup.get(i))){
             //enemiesGroup.get(i).x = 800;
 
-          for(var i = 0; i < enemiesGroup.length; i++){
+         /* for(var i = 0; i < enemiesGroup.length; i++){
             for(var j = 0;j<lasersGroup.length; j++){
               
               if((lasersGroup.get(j)).isTouching(enemiesGroup.get(i))){
@@ -81,7 +84,7 @@ class Laser {
             
             //i--;
            
-            }
+            }*/
             
         }
      //  if(enemiesGroup.length>lcv){
