@@ -40,7 +40,8 @@ var newAnime,
 var back1 ,back2,back3 ,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,back12,back13 ,back14,back15 ,back16,back17 ,back18,back19 ,back20,back21 ,back22,back23 ,back24,back25 ,back26,back27 ,back28,back29 ,back30,back31 ,back32,back33 ,back33,back34 ,back35,back36;
 
 var back,backSprite;
-var sirjan,r = 0;
+var sirjan,r = 0,
+    enemyTank;
 
 function preload(){
 
@@ -72,7 +73,7 @@ backButtonImg = loadImage("images/backButton.png");
 
 startGameImg = loadImage("images/circle.png")
 
-bulletImg    = loadImage("images/bulletCircular.png");
+bulletImg    = loadImage("images/laserRed16.png");
 
 //explosion_11 = loadImage("images/explosion1/1.png");
 //explosion_12 = "images/explosion1/2.png";
@@ -82,6 +83,8 @@ explosion_2 = loadAnimation("images/explosionB/1.png","images/explosionB/2.png",
 newAnime = loadAnimation("Basic/Hero-FighterJet/Without-Bullet/hero1.png","Basic/Hero-FighterJet/Without-Bullet/hero2.png","Basic/Hero-FighterJet/Without-Bullet/hero3.png","Basic/Hero-FighterJet/Without-Bullet/hero4.png","Basic/Hero-FighterJet/Without-Bullet/hero5.png","Basic/Hero-FighterJet/Without-Bullet/hero6.png");
 //newAnime = loadAnimation("images/explosionA/1.png","images/explosionA/2.png","images/explosionA/3.png","images/explosionA/4.png","images/explosionA/5.png","images/explosionA/6.png","images/explosionA/7.png","images/explosionA/8.png","images/explosionA/9.png","images/explosionA/10.png","images/explosionA/11.png","images/explosionA/12.png","images/explosionA/13.png","images/explosionA/14.png","images/explosionA/15.png","images/explosionA/16.png","images/explosionA/17.png")
 
+//enemyTank = createImg('decor_tank.gif');
+/*
 back1 = loadImage("b/frame_00_delay-0.03s.gif");
 back2 = loadImage("b/frame_01_delay-0.03s.gif");
 back3 = loadImage("b/frame_02_delay-0.03s.gif");
@@ -119,8 +122,9 @@ back34 = loadImage("b/frame_33_delay-0.03s.gif");
 back35 = loadImage("b/frame_34_delay-0.03s.gif");
 back36 = loadImage("b/frame_35_delay-0.03s.gif");
 
-
-back  = loadAnimation(back1,back2,back3,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,back12,back13 ,back14,back15 ,back16,back17 ,back18,back19 ,back20,back21 ,back22,back23 ,back24,back25 ,back26,back27 ,back28,back29 ,back30,back31 ,back32,back33 ,back33,back34 ,back35,back36);
+*/
+//back  = loadAnimation(back1,back2,back3,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,back12,back13 ,back14,back15 ,back16,back17 ,back18,back19 ,back20,back21 ,back22,back23 ,back24,back25 ,back26,back27 ,back28,back29 ,back30,back31 ,back32,back33 ,back33,back34 ,back35,back36);
+//back = createImg('IrF.gif');
 }
 
 function setup(){
@@ -179,6 +183,9 @@ function draw(){
 background("black");
 frameRate(48)
 frameC += 1;
+
+//back.position(0,0)
+//console.log(back)
 /*
 r++;
 push();
