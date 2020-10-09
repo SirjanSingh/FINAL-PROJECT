@@ -125,7 +125,7 @@ class Game {
             enemiesObj.rotateE1r(0,5);
             enemiesObj.rotateE2r(0,5);
         //rate of bullet firing
-        if(frameC % 4 === 0){
+        if(frameC % 5 === 0){
         laserObj.createLasers();
         }
        laserObj.collision();

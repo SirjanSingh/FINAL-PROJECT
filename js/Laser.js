@@ -6,6 +6,7 @@ class Laser {
     createLasers(){
       fill("red")
       laser = createSprite(mouseX,mouseY-10,5,15);
+      laser.scale = 0.8;
       laser.velocityY = -18;
       //laser.debug = true;
       laser.setCollider("circle",0,0,8)

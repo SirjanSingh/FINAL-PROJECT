@@ -84,7 +84,7 @@ newAnime = loadAnimation("Basic/Hero-FighterJet/Without-Bullet/hero1.png","Basic
 //newAnime = loadAnimation("images/explosionA/1.png","images/explosionA/2.png","images/explosionA/3.png","images/explosionA/4.png","images/explosionA/5.png","images/explosionA/6.png","images/explosionA/7.png","images/explosionA/8.png","images/explosionA/9.png","images/explosionA/10.png","images/explosionA/11.png","images/explosionA/12.png","images/explosionA/13.png","images/explosionA/14.png","images/explosionA/15.png","images/explosionA/16.png","images/explosionA/17.png")
 
 //enemyTank = createImg('decor_tank.gif');
-/*
+
 back1 = loadImage("b/frame_00_delay-0.03s.gif");
 back2 = loadImage("b/frame_01_delay-0.03s.gif");
 back3 = loadImage("b/frame_02_delay-0.03s.gif");
@@ -122,8 +122,8 @@ back34 = loadImage("b/frame_33_delay-0.03s.gif");
 back35 = loadImage("b/frame_34_delay-0.03s.gif");
 back36 = loadImage("b/frame_35_delay-0.03s.gif");
 
-*/
-//back  = loadAnimation(back1,back2,back3,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,back12,back13 ,back14,back15 ,back16,back17 ,back18,back19 ,back20,back21 ,back22,back23 ,back24,back25 ,back26,back27 ,back28,back29 ,back30,back31 ,back32,back33 ,back33,back34 ,back35,back36);
+
+back  = loadAnimation(back1,back2,back3,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,back12,back13 ,back14,back15 ,back16,back17 ,back18,back19 ,back20,back21 ,back22,back23 ,back24,back25 ,back26,back27 ,back28,back29 ,back30,back31 ,back32,back33 ,back33,back34 ,back35,back36);
 //back = createImg('IrF.gif');
 }
 
@@ -131,9 +131,10 @@ function setup(){
     createCanvas(500,displayHeight);
 
     angleMode(DEGREES)
-    //backSprite = createSprite(250,displayHeight/2,10,10);
-    //backSprite.scale = 1;
-    //backSprite.addAnimation("backGround",back)
+    //setting backg
+   /* backSprite = createSprite(250,displayHeight/2,10,10);
+    backSprite.scale = 1;
+    backSprite.addAnimation("backGround",back)*/
 
 selectPlaneMenu = createSprite(250,displayHeight/2)
 selectPlaneMenu.visible = false;
