@@ -64,34 +64,68 @@ class Enemies {
         enemies.push(enemy)
     }
 
-    rotateE1r(x,y){
-        for( var i = 0 ; i < enemiesRedGroup1.length;i++){
-            var a = 45;
-            if(enemiesRedGroup1.get(i).x>140){
-                enemiesRedGroup1.get(i).rotation = a;
-                if(enemiesRedGroup1.get(i).x>150){
-                    a+=45;
+    enemiesN1(x,y,xv,yv,t){
+       
+        e3nex =1;
+        var enemy = createSprite(x,y,50,50);
+        enemy.addImage(enemyNImg);
+        enemy.scale = 0.4;
+        enemy.velocityX = xv;
+        enemy.velocityY = yv ;
+        enemy.lifetime  = 800;
+        enemy.setCollider("circle",0,-100,100)
+        if(t == 1){
+            e3n1++;
+            enemy.rotation = -22.5
+        }
+        else if(t ==2){
+            e3n2++;
+            enemy.rotation = 22.5
+        }
+        else if(t == 3){
+            e3n3++;
+        }
+        else if(t == 4){
+            e3n4++;
+        }
+        enemiesGroup.add(enemy); 
+        enemies.push(enemy)
+    }
+    rotateE12(x,y,q){
+        var e = q; // just did it
+        //console.log(e);
+        if(e === 1){
+            for( var i = 0 ; i < enemiesRedGroup1.length;i++){
+                var a = 45;
+                if(enemiesRedGroup1.get(i).x>140){
                     enemiesRedGroup1.get(i).rotation = a;
-                    enemiesRedGroup1.get(i).velocityX = x;
-                    enemiesRedGroup1.get(i).velocityY = y;
+                    if(enemiesRedGroup1.get(i).x>150){
+                        a+=45;
+                        enemiesRedGroup1.get(i).rotation = a;
+                        enemiesRedGroup1.get(i).velocityX = x;
+                        enemiesRedGroup1.get(i).velocityY = y;
+                    }
                 }
             }
         }
-    }
-    rotateE2r(x,y){
-        for( var i = 0 ; i < enemiesRedGroup2.length;i++){
-            var a = -45;
-            if(enemiesRedGroup2.get(i).x<360){
-                enemiesRedGroup2.get(i).rotation = a;
-                if(enemiesRedGroup2.get(i).x<350){
-                    a-=45;
+        else if(e === 2){
+            for( var i = 0 ; i < enemiesRedGroup2.length;i++){
+                var a = -45;
+                if(enemiesRedGroup2.get(i).x<360){
                     enemiesRedGroup2.get(i).rotation = a;
-                    enemiesRedGroup2.get(i).velocityX = x;
-                    enemiesRedGroup2.get(i).velocityY = y;
+                    if(enemiesRedGroup2.get(i).x<350){
+                        a-=45;
+                        enemiesRedGroup2.get(i).rotation = a;
+                        enemiesRedGroup2.get(i).velocityX = x;
+                        enemiesRedGroup2.get(i).velocityY = y;
+                    }
                 }
             }
         }
     }
+    
+   
+
     display(){
         var angle = enemy.angle;
         push();

@@ -12,6 +12,8 @@ class Laser {
       laser.setCollider("circle",0,0,8)
       laser.lifetime = displayHeight/laser.velocityY-2;
       laser.addImage("bullet", bulletImg)
+      laser.depth = player.depth ;
+      laser.depth = player.depth - 2
       lasersGroup.add(laser) ;
       lasers.push(laser)
       //frameRate(144)
@@ -49,17 +51,23 @@ class Laser {
           //  }
         }*/
        // console.log(ex,ey)
+       
         for(var i = 0; i < enemies.length; i++){
          
             for(var j = 0;j<lasers.length; j++){
               
               if((lasers[j]).isTouching(enemies[i])){
-              enemies[i].x =800;
+              
+              et++;
               //enemies.pop(enemies[i])
-             lcv  = lcv + 1;
+              lcv  = lcv + 1;
                   //i--;
                  // console.log("Ship no " + lcv);
                   lasers[j].destroy();
+                  if(et == 2 ){
+                    enemies[i].x =800;
+                    et = 0
+                  }
                   //j--;
                   //console.log("FPS : "+frameRate())
               }

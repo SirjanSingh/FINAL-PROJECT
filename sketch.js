@@ -2,6 +2,7 @@ var player;
 var plane1,plane2,plane3,plane4,plane5,plane6,plane7,plane8,plane9;
 var enemyRedImg,enemyGreenImg,enemyCyanImg,enemyWhiteImg,enemyYellowImg;
 var enemyRed2Img,enemyWhite2Img;
+var enemyN , enemyNImg;
 var player;
 var upgrade_Plane,start_Game;
 var main_Screen,main_ScreenImg;
@@ -26,13 +27,15 @@ var explosion_1;
 var explosion_2;
 var explosionSprite;
 var backObj;
-var fc4,fc1,fc2,fc3;
+var fc4,fc1,fc2,fc3;// FOR SETTING FRAME DIFF
 var frameC = 0;
 //var EnemySize = 0;
 var e1r = 0;
 var e2r = 0;
 var e1rex;
-var e2rex;
+var e2rex= 0;
+var e3n1 = 0,e3n2 = 0,e3n3 = 0, e3n4 = 0;
+var e3nex;
 var lasers = [];
 var enemies = [];
 var newAnime,
@@ -41,7 +44,8 @@ var back1 ,back2,back3 ,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,ba
 
 var back,backSprite;
 var sirjan,r = 0,
-    enemyTank;
+    enemyTank ;
+    var et = 0;
 
 function preload(){
 
@@ -63,6 +67,8 @@ enemyYellowImg = loadImage("images/enemyPlane/Enemy_Plane_Yellow.png");
 
 enemyRed2Img   = loadImage("images/enemyPlane/Enemy_Plane_Red-2.png");
 enemyWhite2Img = loadImage("images/enemyPlane/Enemy_Plane_White2.png"); 
+
+enemyNImg      = loadImage("images/enemynew-removebg-preview.png");
 
 main_ScreenImg = loadImage("images/Untitled.png");
 
@@ -193,7 +199,7 @@ push();
 translate(sirjan.x,sirjan.y);
 sirjan.rotation = r
 pop();*/
-console.log(sirjan)
+//console.log(sirjan)
 gameObj.start();
 //console.log(gameState);
 //console.log(frameCount-fc3);
@@ -207,7 +213,7 @@ player.x = mouseX;
 player.y = mouseY;
 player1.x = mouseX;
 player1.y = mouseY;
-//console.log(mouseX +":"+mouseY );
+console.log(mouseX +":"+mouseY );
 //console.log(enemies)
 
 

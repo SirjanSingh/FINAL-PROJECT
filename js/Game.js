@@ -36,14 +36,14 @@ class Game {
             
         }
         else if(gameState === "selectPlane"){
-       
+       //dont edit the code below👍
         if((frameC > (fc1 +100)) ){
             if(mousePressedOver(backButton) || planeNumber  === undefined){
               backObj.backFromPlaneSelection();
                 fc2 = frameC;
             }
         }
-            
+        // till here
         }
         else if(gameState === "play"){
             gameObj.play();
@@ -106,24 +106,33 @@ class Game {
         //console.log(frameRate())
 
         if(frameC % 15 === 0 && frameC > (fc3+75) && e1r < 5){
-            //enemiesObj.createEnemies(random(50,450),0,0,6);
-                enemiesObj.enemiesRed1(0,120,5,0)
-            
+            enemiesObj.enemiesRed1(0,120,5,0)   
         }
+        if(frameC % 15 === 0 && frameC > (fc3 + 150) && e2r < 5 ){
+            enemiesObj.enemiesRed2(500,120,-5,0)
+        }
+        if(frameC % 22 === 0 && frameC > (fc3 + 200) && e3n1 < 8){
+            enemiesObj.enemiesN1(60,0,2,4,1);
+        }
+        if(frameC % 22 === 0 && frameC > (fc3 + 320) && e3n2 < 8){
+            enemiesObj.enemiesN1(440,0,-2,4,2);
+        }
+        if(frameC % 22 === 0 && frameC > (fc3 + 420) && e3n3 < 8){
+            enemiesObj.enemiesN1(60,0,0,4,3);
+        }
+        if(frameC % 22 === 0 && frameC > (fc3 + 500) && e3n4 < 8){
+            enemiesObj.enemiesN1(440,0,0,4,4);
+        }
+        
 
-        if(frameC % 15 === 0 && frameC > (fc3 + 175) && e2r < 5 ){
-           
-            // console.log("wrdf\ndrgfc\nresdfc\neradsv\nhj")
-                enemiesObj.enemiesRed2(500,120,-5,0)
-        }
 /*
         if(frameCount % 25 === 0){
             enemiesObj.createEnemies(random(50,450),0,0,5);
 
         }*/
 
-            enemiesObj.rotateE1r(0,5);
-            enemiesObj.rotateE2r(0,5);
+        enemiesObj.rotateE12(0,5,1);
+        enemiesObj.rotateE12(0,5,2);
         //rate of bullet firing
         if(frameC % 5 === 0){
         laserObj.createLasers();
