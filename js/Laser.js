@@ -1,11 +1,11 @@
 class Laser {
     constructor(){
-
+      this.score = 0;
     }
 
     createLasers(){
       fill("red")
-      laser = createSprite(mouseX,mouseY-10,5,15);
+      laser = createSprite(mouseX,mouseY-40,5,15);
       laser.scale = 0.8;
       laser.velocityY = -18;
       //laser.debug = true;
@@ -110,6 +110,7 @@ class Laser {
         
         //console.log(lcv)
     }
+   
     display(){
 
     }

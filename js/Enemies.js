@@ -41,6 +41,7 @@ class Enemies {
     enemiesRed1(x,y,xv,yv){
         e1r++;
         e1rex = 1;
+        ne[0]++;
         var enemy = createSprite(x,y,50,50);
         enemy.addImage(enemyRedImg);
         enemy.velocityX = xv;
@@ -54,6 +55,7 @@ class Enemies {
     enemiesRed2(x,y,xv,yv){
         e2r++;
         e2rex =1;
+        ne[0]++;
         var enemy = createSprite(x,y,50,50);
         enemy.addImage(enemyRed2Img);
         enemy.velocityX = xv;
@@ -65,7 +67,7 @@ class Enemies {
     }
 
     enemiesN1(x,y,xv,yv,t){
-       
+        ne[0]++;
         e3nex =1;
         var enemy = createSprite(x,y,50,50);
         enemy.addImage(enemyNImg);
@@ -88,9 +90,11 @@ class Enemies {
         else if(t == 4){
             e3n4++;
         }
+        enemiesGroupN.add(enemy)
         enemiesGroup.add(enemy); 
         enemies.push(enemy)
     }
+
     rotateE12(x,y,q){
         var e = q; // just did it
         //console.log(e);

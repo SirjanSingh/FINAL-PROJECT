@@ -91,8 +91,9 @@ class Game {
                 break; 
             default:
                 //console.log("shit");
-                player1.visible = true;
-                player1.scale = 0.35
+                /*player1.visible = true;
+                player1.scale = 0.35*/
+                player.addAnimation("simple",plane1);
                 break;
         }
         textSize(20)
@@ -104,6 +105,7 @@ class Game {
             frameRate(144)
         }*/
         //console.log(frameRate())
+        scoreObj.score1();
 
         if(frameC % 15 === 0 && frameC > (fc3+75) && e1r < 5){
             enemiesObj.enemiesRed1(0,120,5,0)   
@@ -117,10 +119,10 @@ class Game {
         if(frameC % 22 === 0 && frameC > (fc3 + 320) && e3n2 < 8){
             enemiesObj.enemiesN1(440,0,-2,4,2);
         }
-        if(frameC % 22 === 0 && frameC > (fc3 + 420) && e3n3 < 8){
+        if(frameC % 25 === 0 && frameC > (fc3 + 420) && e3n3 < 8){
             enemiesObj.enemiesN1(60,0,0,4,3);
         }
-        if(frameC % 22 === 0 && frameC > (fc3 + 500) && e3n4 < 8){
+        if(frameC % 25 === 0 && frameC > (fc3 + 500) && e3n4 < 8){
             enemiesObj.enemiesN1(440,0,0,4,4);
         }
         
@@ -134,12 +136,11 @@ class Game {
         enemiesObj.rotateE12(0,5,1);
         enemiesObj.rotateE12(0,5,2);
         //rate of bullet firing
-        if(frameC % 5 === 0){
+        if(frameC % 4 === 0){
         laserObj.createLasers();
         }
        laserObj.collision();
-       
-        //console.log(lasersGroup.length)
+//        //console.log(lasersGroup.length)
     }
     display(){
         
