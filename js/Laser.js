@@ -11,11 +11,12 @@ class Laser {
       //laser.debug = true;
       laser.setCollider("circle",0,0,8)
       laser.lifetime = displayHeight/laser.velocityY-2;
-      laser.addImage("bullet", bulletImg)
+      laser.addImage("bullet", bullet1Img)
       laser.depth = player.depth ;
       laser.depth = player.depth - 2
       lasersGroup.add(laser) ;
       lasers.push(laser)
+      laserSound.play();
       //frameRate(144)
 
   }

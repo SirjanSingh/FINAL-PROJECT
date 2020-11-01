@@ -1,9 +1,9 @@
-var player;
+var player,playerObj;
 var plane1,plane2,plane3,plane4,plane5,plane6,plane7,plane8,plane9;
 var enemyRedImg,enemyGreenImg,enemyCyanImg,enemyWhiteImg,enemyYellowImg;
 var enemyRed2Img,enemyWhite2Img;
 var enemyN , enemyNImg;
-var player;
+var player1;
 var upgrade_Plane,start_Game;
 var main_Screen,main_ScreenImg;
 var selectObj;
@@ -49,6 +49,12 @@ var sirjan,r = 0,
     var et = 0,ett = 0;
 var score = 0,scoreObj;
 var EnemyDes ;
+var bullet1Img,bullet2Img,bullet3Img,
+    bullet1,bullet2,bullet3,
+    level=0,levelObj;
+var laserSound;
+
+
 function preload(){
 
 plane1 = loadImage("images/plane/Plane_1.PNG.png");
@@ -82,6 +88,9 @@ backButtonImg = loadImage("images/backButton.png");
 startGameImg = loadImage("images/circle.png")
 
 bulletImg    = loadImage("images/laserRed16.png");
+bullet1Img   = loadImage("images/bullets/fx_shot_04.png")
+bullet2Img   = loadImage("images/bullets/fx_shotNEW_x2.png")
+bullet3Img   = loadImage("images/bullets/fx_shotNEW_x3.png")
 
 //explosion_11 = loadImage("images/explosion1/1.png");
 //explosion_12 = "images/explosion1/2.png";
@@ -133,6 +142,8 @@ back36 = loadImage("b/frame_35_delay-0.03s.gif");
 
 back  = loadAnimation(back1,back2,back3,back4,back5 ,back6,back7 ,back8,back9 ,back10,back11 ,back12,back13 ,back14,back15 ,back16,back17 ,back18,back19 ,back20,back21 ,back22,back23 ,back24,back25 ,back26,back27 ,back28,back29 ,back30,back31 ,back32,back33 ,back33,back34 ,back35,back36);
 //back = createImg('IrF.gif');
+
+laserSound = loadSound("sounds/laserShoot.mp3")
 }
 
 function setup(){
@@ -162,13 +173,15 @@ enemiesRedGroup1 =new Group();
 enemiesRedGroup2 =new Group();
 enemiesGroupN= new Group();
 lasersGroup  = new Group();
+playerObj    = new Player();
 selectObj    = new Select_Plane();
 gameObj      = new Game();
 enemiesObj   = new Enemies();
 laserObj     = new Laser();
 backObj      = new Back();
 scoreObj     = new Score();
-startGame  = createSprite(251,701);
+levelObj     = new Level();
+startGame    = createSprite(251,701);
 startGame.addImage(startGameImg);
 startGame.scale = 0.475
 startGame.visible = false;
@@ -207,22 +220,24 @@ gameObj.start();
 //console.log(gameState);
 //console.log(frameCount-fc3);
 
-if(frameCount > (fc3+175)){
+if(frameCount > (fc3+10)){
     //console.log("ouch")
     //e2r = 0;
+//console.log(playerObj.health(0))
 }
+//console.log(playerObj.health(0))
 //console.log(enemiesGroup.length)
 player.x = mouseX;
 player.y = mouseY;
 player1.x = mouseX;
 player1.y = mouseY;
 //console.log(mouseX +":"+mouseY );
-console.log(score,ne[0])
+//console.log(score,ne[0])
 //console.log(enemies)
 
 
-
 drawSprites();
+text("Score: "+score,250,20)
 }
 
 /*

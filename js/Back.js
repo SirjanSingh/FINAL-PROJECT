@@ -14,7 +14,7 @@ class Back {
         plane_Selection.addImage(startGameImg);
         plane_Selection.scale = 0.12
         plane_Selection.visible = false;
-        console.log("siefn")
+        console.log("successful return from plane selection")
     }
     display(){
 
