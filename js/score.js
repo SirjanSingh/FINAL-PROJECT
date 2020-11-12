@@ -25,7 +25,7 @@ class Score {
             if(lasersGroup.isTouching(enemiesRedGroup2[i])){
                 this.k++;
                 if(this.k==2){
-                    var eg = enemiesRedGroup2[i]
+                    var eg = enemiesRedGroup2[i];
                     var explosion = createSprite(eg.x,eg.y,50,50);
                     explosion.addAnimation("explosion",explosion_2);
                     explosion.lifetime = 26;

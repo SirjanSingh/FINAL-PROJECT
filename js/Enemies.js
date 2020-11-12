@@ -38,6 +38,7 @@ class Enemies {
             enemy.lifetime = displayHeight/(yv-1); //more lifetime bcoz I not  want it to vanish earlier
             enemiesGroup.add(enemy);
     }
+    //xv stands for Xvelocity and think further
     enemiesRed1(x,y,xv,yv){
         e1r++;
         e1rex = 1;
@@ -54,7 +55,7 @@ class Enemies {
 
     enemiesRed2(x,y,xv,yv){
         e2r++;
-        e2rex =1;
+        e2rex = 1;
         ne[0]++;
         var enemy = createSprite(x,y,50,50);
         enemy.addImage(enemyRed2Img);
@@ -80,7 +81,7 @@ class Enemies {
             e3n1++;
             enemy.rotation = -22.5
         }
-        else if(t ==2){
+        else if(t == 2){
             e3n2++;
             enemy.rotation = 22.5
         }

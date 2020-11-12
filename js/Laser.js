@@ -4,7 +4,7 @@ class Laser {
     }
 
     createLasers(){
-      fill("red")
+      //fill("red")
       laser = createSprite(mouseX,mouseY-40,5,15);
       laser.scale = 0.8;
       laser.velocityY = -18;
