@@ -17,6 +17,7 @@ class Game {
                 gameState = "play"
                 fc3 = frameCount;
             }
+            
             if( frameC > (fc2 +50) || fc2 === undefined){
                 if(mousePressedOver(plane_Selection)) {
                     //backButton.visible = true;
@@ -36,7 +37,7 @@ class Game {
             
         }
         else if(gameState === "selectPlane"){
-       //dont edit the code below👍
+       //dont edit the code below👍 made with alot of hardwrok
         if((frameC > (fc1 +100)) ){
             if(mousePressedOver(backButton) && planeNumber  !== undefined){
               backObj.backFromPlaneSelection();

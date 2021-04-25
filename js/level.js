@@ -58,12 +58,13 @@ class Level {
             scoreObj.score1();
             playerObj.checkCollision();
 
-            if(frameC % 15 === 0 && frameC > (fc3+75) && e1r < 5){
-                enemiesObj.enemiesRed1(0,120,5,0)   
+            if(frameC % 15 === 0/*the rate of enemy production*/ && frameC > (fc3+75)/* the time after which the enemy will  be produced*/ && e1r < 5/*limiting the number of enemy produced to 5*/){
+                enemiesObj.enemiesRed1(0,120,5,0)   // creaing  the enemes set of 5
             }
             if(frameC % 15 === 0 && frameC > (fc3 + 150) && e2r < 5 ){
                 enemiesObj.enemiesRed2(500,120,-5,0)
             }
+           // the second wave of enemies begin from here...with another animation
             if(frameC % 22 === 0 && frameC > (fc3 + 200) && e3n1 < 8){
                 enemiesObj.enemiesN1(60,0,2,4,1);
             }
@@ -83,6 +84,7 @@ class Level {
                 enemiesObj.createEnemies(random(50,450),0,0,5);
 
             }*/
+            //rotated the enemies
 
             enemiesObj.rotateE12(0,5,1);
             enemiesObj.rotateE12(0,5,2);
@@ -90,6 +92,7 @@ class Level {
             if(frameC % 4 === 0){
             laserObj.createLasers();
             }
+            
         laserObj.collision();
            //console.log(lasersGroup.length)
         }
