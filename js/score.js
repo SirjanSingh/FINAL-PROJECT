@@ -13,8 +13,10 @@ class Score {
                 if(this.j==2){
                     var eg = enemiesRedGroup1[i]
                     var explosion = createSprite(eg.x,eg.y,50,50);
-                    explosion.addAnimation("explosion",explosion_2);
-                    explosion.lifetime = 26;
+                    //explosion.addAnimation("explosion",explosion_2);
+                    explosion.addImage(explode);
+                    explosion.scale = 0.3;
+                    explosion.lifetime =5;// 26;
                     score+=150;
                     this.j=0;
                 }
@@ -27,8 +29,11 @@ class Score {
                 if(this.k==2){
                     var eg = enemiesRedGroup2[i];
                     var explosion = createSprite(eg.x,eg.y,50,50);
-                    explosion.addAnimation("explosion",explosion_2);
-                    explosion.lifetime = 26;
+                   // explosion.addAnimation("explosion",explosion_2);
+                   explosion.addImage(explode);
+                   explosion.scale = 0.3;
+
+                    explosion.lifetime = 5//26;
                     this.k=0;
                     score+=150;
                 }
@@ -42,8 +47,10 @@ class Score {
                 if(this.l==2){
                     var eg = enemiesGroupN[i]
                     var explosion = createSprite(eg.x,eg.y,50,50);
-                    explosion.addAnimation("explosion",explosion_2);
-                    explosion.lifetime = 26;
+                     //explosion.addAnimation("explosion",explosion_2);
+                     explosion.addImage(explode);
+                     explosion.scale = 0.3;
+                     explosion.lifetime =5;// 26;
                     this.l=0;
                     score+=200;
                 }

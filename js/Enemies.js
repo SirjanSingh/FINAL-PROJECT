@@ -73,7 +73,7 @@ class Enemies {
         var enemy = createSprite(x,y,50,50);
         enemy.addImage(enemyNImg);
         enemy.scale = 0.4;
-        enemy.velocityX = xv;sss
+        enemy.velocityX = xv;
         enemy.velocityY = yv ;
         enemy.lifetime  = 800;
         enemy.setCollider("circle",0,-100,100)// TO CIRCLE AS IT WAS NECCASRY

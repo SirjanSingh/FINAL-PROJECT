@@ -25,6 +25,7 @@ var lcv = 0;
 var bulletImg , bullet; 
 var explosion_1;
 var explosion_2;
+var explode;
 var explosionSprite;
 var backObj;
 var fc4,fc1,fc2,fc3;// FOR SETTING FRAME DIFF
@@ -96,7 +97,7 @@ bullet3Img   = loadImage("images/bullets/fx_shotNEW_x3.png")
 //explosion_12 = "images/explosion1/2.png";
 explosion_1 = loadAnimation("images/explosionA/1.png","images/explosionA/2.png","images/explosionA/3.png","images/explosionA/4.png","images/explosionA/5.png","images/explosionA/6.png","images/explosionA/7.png","images/explosionA/8.png","images/explosionA/9.png","images/explosionA/10.png","images/explosionA/11.png","images/explosionA/12.png","images/explosionA/13.png","images/explosionA/14.png","images/explosionA/15.png","images/explosionA/16.png","images/explosionA/17.png")
 explosion_2 = loadAnimation("images/explosionB/1.png","images/explosionB/2.png","images/explosionB/3.png","images/explosionB/4.png","images/explosionB/5.png","images/explosionB/6.png","images/explosionB/7.png","images/explosionB/8.png","images/explosionB/9.png","images/explosionB/10.png","images/explosionB/11.png","images/explosionB/12.png","images/explosionB/13.png");
-
+explode  = loadImage("EXPLODE.png");
 newAnime = loadAnimation("Basic/Hero-FighterJet/Without-Bullet/hero1.png","Basic/Hero-FighterJet/Without-Bullet/hero2.png","Basic/Hero-FighterJet/Without-Bullet/hero3.png","Basic/Hero-FighterJet/Without-Bullet/hero4.png","Basic/Hero-FighterJet/Without-Bullet/hero5.png","Basic/Hero-FighterJet/Without-Bullet/hero6.png");
 //newAnime = loadAnimation("images/explosionA/1.png","images/explosionA/2.png","images/explosionA/3.png","images/explosionA/4.png","images/explosionA/5.png","images/explosionA/6.png","images/explosionA/7.png","images/explosionA/8.png","images/explosionA/9.png","images/explosionA/10.png","images/explosionA/11.png","images/explosionA/12.png","images/explosionA/13.png","images/explosionA/14.png","images/explosionA/15.png","images/explosionA/16.png","images/explosionA/17.png")
 
